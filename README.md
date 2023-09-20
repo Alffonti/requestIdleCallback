@@ -39,7 +39,7 @@ Within the provided code, several key components demonstrate the usage and benef
 
 3. Simulated Main Thread Task (lookBusy): The lookBusy function simulates a task running in the main thread, thus demonstrating the importance of requestIdleCallback. The background task will only run if there is adequate time available before the next requestAnimationFrame. The "waitTime" variable generates values between 13 and 20, representing the execution time of main thread tasks. Consequently, if the value exceeds 16 milliseconds, requestIdleCallback is not invoked during that frame, preserving the responsiveness of the main thread.
 
-4. Creating Urgency (important-section): The "important-section" element is introduced to demonstrate the urgency feature. It signifies that the background task should be executed immediately, rather than relying on idle periods. The code accomplishes this by utilizing the IntersectionObserver, which triggers the remaining portion of the background task as soon as the "important-section" becomes visible in the viewport.
+4. Creating Urgency (urgent-section): The "urgent-section" element is introduced to demonstrate the urgency feature. It signifies that the background task should be executed immediately, rather than relying on idle periods. The code accomplishes this by utilizing the IntersectionObserver, which triggers the remaining portion of the background task as soon as the "important-section" becomes visible in the viewport.
 
 
 ## References
