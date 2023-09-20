@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <form id="colorForm">
+      <label for="colorSelect">Select a color:</label>
+      <select id="colorSelect">
+        <option value="red">Red</option>
+        <option value="pink">Pink</option>
+        <option value="purple">Purple</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="white">White</option>
+        <!-- Add more color options as needed -->
+      </select>
+      <button type="submit">Change Background</button>
+    </form>
+    <h1>Background and low priority task runs when browser is idle</h1>
+    <div id="box"></div>
+    <div id="urgent-section" class="button">Complete task if intercepted</div>
+    <button id="cancel-idle-callback" class="button">
+      Cancel idle callback
+    </button>
+    <p id="note">
+      By utilizing the <code>requestIdleCallback</code> API, less important
+      tasks can run when the browser's main thread is not busy, avoiding
+      disruptions to the main thread. This allows users to interact with the
+      webpage, such as changing the background, even while the lower-priority
+      task is in progress.
+    </p>
+    <p id="note">
+      In real-world scenarios, it's important to be mindful that
+      <code>requestIdleCallback</code> can continue running until the page is
+      closed or the task explicitly stops. This continuous execution is
+      particularly useful for long-running processes like analytics tracking,
+      where data collection and transmission can persist throughout a user's
+      interaction with the webpage. Proper management and termination of these
+      tasks are essential to ensure efficient resource utilization and user
+      experience.
+    </p>
+  </body>
+</html>
